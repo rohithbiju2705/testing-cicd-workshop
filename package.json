@@ -26,5 +26,34 @@
     "jest": "^30.2.0",
     "prettier": "^3.6.2",
     "supertest": "^7.1.4"
-  }
-}
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "*.js",
+      "!node_modules/**"
+    ],
+    "reporters": [
+      "default",
+      [
+        "jest-html-reporter",
+        {
+          "pageTitle": "Calculate API Test Report",
+          "outputPath": "test-report.html"
+        }
+      ],
+      [
+        "jest-junit",
+        {
+          "outputDirectory": "test-results",
+          "outputName": "junit.xml"
+        }
+      ]
+    ],
+    "coverageReporters": [
+      "text",
+      "lcov",
+      "html"
+    ]
+
+}}
